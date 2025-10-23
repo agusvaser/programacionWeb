@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sobre Nosotros - Mates & Más, tu tienda de confianza desde 2015">
+  <title>Nosotros - Mates & Más</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --gris-claro: #f1f3f5;
+      --gris-oscuro: #3c3c3c;
+      --blanco: #ffffff;
+      --acento: #8b7355;
+      --acento-hover: #6d5a43;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--gris-claro);
+      color: var(--gris-oscuro);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--acento);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    header {
+      background: var(--blanco);
+      border-bottom: 1px solid #dee2e6;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.35s ease;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 60px 15px 60px;
+      position: relative;
+      min-height: 140px;
+      transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .header-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .logo-gaucho {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 8px auto;
+      transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-center h1 {
+      font-size: 26px;
+      color: var(--gris-oscuro);
+      font-weight: 600;
+      margin: 0;
+      transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .cart-button {
+      background: none;
+      border: 2px solid var(--gris-oscuro);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      font-size: 20px;
+      text-decoration: none;
+      color: var(--gris-oscuro);
+    }
+
+    .cart-button:hover {
+      background-color: var(--acento);
+      border-color: var(--acento);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--acento);
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--gris-oscuro);
+    }
+
+    .divider {
+      border-top: 1px solid #dee2e6;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .navbar {
+      justify-content: center;
+      background: var(--blanco) !important;
+      padding: 0px 0;
+    }
+
+    header.scrolled {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    header.scrolled .header-container {
+      padding: 15px 50px 10px 50px;
+      min-height: 100px;
+    }
+
+    header.scrolled .logo-gaucho {
+      height: 65px;
+      width: 65px;
+      margin-bottom: 4px;
+      transform: translateY(-5px);
+    }
+
+    header.scrolled .header-center h1 {
+      font-size: 21px;
+    }
+
+    .navbar-nav {
+      margin: auto;
+      text-align: center;
+    }
+
+    .nav-link {
+      color: var(--gris-oscuro) !important;
+      font-weight: 500;
+      margin: 0 12px;
+      font-size: 17px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Removed .nav-link.active styling to prevent brown color on active section */
+
+    .nav-link:hover {
+      color: var(--acento) !important;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--acento) 0%, var(--acento-hover) 100%);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+      margin-top: 0; /* Removed margin-top from page-header to eliminate space */
+    }
+
+    .page-header h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .content-section {
+      background: var(--blanco);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .content-section h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gris-oscuro);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .content-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--acento);
+    }
+
+    .content-section p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--gris-oscuro);
+      margin-bottom: 20px;
+    }
+
+    .content-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 30px;
+      background: var(--gris-claro);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-card i {
+      font-size: 48px;
+      color: var(--acento);
+      margin-bottom: 15px;
+    }
+
+    .value-card h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--gris-oscuro);
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      font-size: 15px;
+      color: #6c757d;
+      margin-bottom: 0;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 30px 0 0 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-year {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--acento);
+      min-width: 100px;
+    }
+
+    .timeline-content {
+      flex: 1;
+      padding: 20px;
+      background: var(--gris-claro);
+      border-radius: 12px;
+      border-left: 4px solid var(--acento);
+    }
+
+    .timeline-content h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--gris-oscuro);
+      margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+      font-size: 16px;
+      color: #6c757d;
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: var(--blanco);
+      color: var(--gris-oscuro);
+      border-top: 1px solid #dee2e6;
+      padding: 60px 0 20px;
+    }
+
+    footer h6 {
+      color: var(--gris-oscuro);
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 2;
+    }
+
+    footer a {
+      color: var(--gris-oscuro);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--acento);
+      padding-left: 5px;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--gris-oscuro);
+      border-radius: 50%;
+      font-size: 20px;
+      color: var(--gris-oscuro);
+      margin-right: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background-color: var(--gris-oscuro);
+      color: var(--blanco);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px; /* Reverted to original padding */
+      border-top: 1px solid #dee2e6;
+      color: #6c757d;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 20px 20px 15px 20px;
+        min-height: 110px;
+      }
+
+      .logo-gaucho {
+        height: 70px;
+        width: 70px;
+      }
+
+      .header-center h1 {
+        font-size: 20px;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .navbar-collapse {
+        background: var(--blanco);
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-link {
+        margin: 8px 0;
+        display: block;
+      }
+
+      .page-header {
+        margin-top: 30px;
+        padding: 60px 0 40px;
+      }
+
+      .page-header h2 {
+        font-size: 32px;
+      }
+
+      .content-section {
+        padding: 25px;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      header.scrolled .header-container {
+        padding: 15px 20px 10px 20px;
+        min-height: 90px;
+      }
+
+      header.scrolled .logo-gaucho {
+        height: 50px;
+        width: 50px;
+      }
+
+      header.scrolled .header-center h1 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- HEADER -->
+  <header id="mainHeader">
+    <div class="header-container">
+      <div class="header-left">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú de navegación">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div class="header-center text-center">
+        <img src="imagenes/logo.jpg" alt="Logo de Mates & Más - Gaucho tomando mate" class="logo-gaucho">
+        <h1>Mates & Más</h1>
+      </div>
+
+      <div class="header-right">
+        <a href="carrito.html" class="cart-button" id="cartButton" aria-label="Carrito de compras">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+      <div class="container-fluid flex-column">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h2>Sobre Nosotros</h2>
+        <p>Conocé nuestra historia y pasión por el mate</p>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="py-5">
+      <div class="container">
+        <!-- NUESTRA HISTORIA -->
+        <div class="content-section">
+          <h3><i class="bi bi-book"></i> Nuestra Historia</h3>
+          <p>
+            <strong>Mates & Más</strong> nació en 2015 de la pasión por mantener viva una de las tradiciones más importantes de nuestra cultura: el mate. Lo que comenzó como un pequeño emprendimiento familiar, hoy se ha convertido en una tienda de referencia para los amantes del mate en todo el país.
+          </p>
+          <p>
+            Desde nuestros inicios, nos propusimos ofrecer productos de la más alta calidad, trabajando directamente con artesanos locales que comparten nuestra visión de preservar las técnicas tradicionales mientras incorporamos diseños modernos y funcionales.
+          </p>
+          <p>
+            Cada mate, bombilla y accesorio que ofrecemos es cuidadosamente seleccionado para garantizar que nuestros clientes disfruten de la mejor experiencia al tomar mate, ya sea en casa, en el trabajo o en sus viajes.
+          </p>
+        </div>
+
+        <!-- NUESTROS VALORES -->
+        <div class="content-section">
+          <h3><i class="bi bi-heart"></i> Nuestros Valores</h3>
+          <div class="values-grid">
+            <div class="value-card">
+              <i class="bi bi-award"></i>
+              <h4>Calidad</h4>
+              <p>Seleccionamos cada producto con los más altos estándares de calidad</p>
+            </div>
+            <div class="value-card">
+              <i class="bi bi-people"></i>
+              <h4>Tradición</h4>
+              <p>Preservamos y promovemos la cultura del mate argentino</p>
+            </div>
+            <div class="value-card">
+              <i class="bi bi-hand-thumbs-up"></i>
+              <h4>Artesanía</h4>
+              <p>Apoyamos a artesanos locales y sus técnicas tradicionales</p>
+            </div>
+            <div class="value-card">
+              <i class="bi bi-shield-check"></i>
+              <h4>Confianza</h4>
+              <p>Construimos relaciones duraderas con nuestros clientes</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NUESTRA TRAYECTORIA -->
+        <div class="content-section">
+          <h3><i class="bi bi-clock-history"></i> Nuestra Trayectoria</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2015</div>
+              <div class="timeline-content">
+                <h4>Los Comienzos</h4>
+                <p>Abrimos nuestra primera tienda física en Buenos Aires con una selección de 20 productos artesanales.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2017</div>
+              <div class="timeline-content">
+                <h4>Expansión Online</h4>
+                <p>Lanzamos nuestra tienda online, permitiendo envíos a todo el país y llegando a miles de nuevos clientes.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-content">
+                <h4>Alianzas con Artesanos</h4>
+                <p>Establecimos colaboraciones directas con más de 15 artesanos de diferentes provincias argentinas.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-content">
+                <h4>Línea Premium</h4>
+                <p>Lanzamos nuestra línea premium de mates y accesorios de edición limitada.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-content">
+                <h4>Presente</h4>
+                <p>Hoy somos una de las tiendas de referencia en Argentina, con más de 200 productos y miles de clientes satisfechos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h6>Seguinos en Redes</h6>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h6>Navegación</h6>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h6>Contacto</h6>
+          <ul>
+            <li><i class="bi bi-telephone"></i> 11 6925 7880</li>
+            <li><i class="bi bi-envelope"></i> matesymas@gmail.com</li>
+            <li><i class="bi bi-geo-alt"></i> Av. Corrientes 1234, CABA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mates & Más. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Header scroll animation
+    const header = document.getElementById("mainHeader");
+    let scrolled = false;
+    let ticking = false;
+
+    function updateHeader(scrollY) {
+      if (!scrolled && scrollY > 120) {
+        header.classList.add("scrolled");
+        scrolled = true;
+      } else if (scrolled && scrollY < 60) {
+        header.classList.remove("scrolled");
+        scrolled = false;
+      }
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => updateHeader(y));
+        ticking = true;
+      }
+    });
+
+    // Auto adjust body padding
+    function ajustarPaddingBody() {
+      const header = document.querySelector("header");
+      const alturaHeader = header.offsetHeight;
+      document.body.style.paddingTop = alturaHeader + "px";
+    }
+
+    window.addEventListener("load", ajustarPaddingBody);
+    window.addEventListener("resize", ajustarPaddingBody);
+
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const navbarCollapse = document.getElementById("navbarNav");
+
+    mobileMenuToggle.addEventListener("click", () => {
+      navbarCollapse.classList.toggle("show");
+      const icon = mobileMenuToggle.querySelector("i");
+      icon.classList.toggle("bi-list");
+      icon.classList.toggle("bi-x");
+    });
+
+    // Load cart count from localStorage
+    let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+    const cartCountElement = document.getElementById("cartCount");
+    cartCountElement.textContent = cartCount;
+  </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mates & Más - Tu tienda online de mates, bombillas y accesorios de calidad">
-  <title>Mates & Más - Tienda de Mates y Accesorios</title>
+  <meta name="description" content="Productos de Mates & Más - Mates, bombillas y accesorios de calidad">
+  <title>Productos - Mates & Más</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -37,7 +37,6 @@
       margin: 0;
     }
 
-    /* ===== SKIP LINK (Accessibility) ===== */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -53,7 +52,6 @@
       top: 0;
     }
 
-    /* ===== HEADER ===== */
     header {
       background: var(--blanco);
       border-bottom: 1px solid #dee2e6;
@@ -107,7 +105,6 @@
       gap: 18px;
     }
 
-    /* Improved cart button with icon and animation */
     .cart-button {
       background: none;
       border: 2px solid var(--gris-oscuro);
@@ -121,8 +118,8 @@
       position: relative;
       transition: all 0.3s ease;
       font-size: 20px;
-      color: var(--gris-oscuro);
       text-decoration: none;
+      color: var(--gris-oscuro);
     }
 
     .cart-button:hover {
@@ -158,7 +155,6 @@
       50% { transform: scale(1.3); }
     }
 
-    /* Mobile hamburger menu */
     .mobile-menu-toggle {
       display: none;
       background: none;
@@ -200,13 +196,11 @@
       font-size: 21px;
     }
 
-    /* ===== NAV ===== */
     .navbar-nav {
       margin: auto;
       text-align: center;
     }
 
-    /* Removed underline effect and simplified hover state */
     .nav-link {
       color: var(--gris-oscuro) !important;
       font-weight: 500;
@@ -220,41 +214,75 @@
       color: var(--acento) !important;
     }
 
-    /* ===== SLIDER ===== */
-    .carousel-item img {
-      height: calc(100vh - 190px);
-      object-fit: cover;
-      min-height: 400px;
+    .page-header {
+      background: linear-gradient(135deg, var(--acento) 0%, var(--acento-hover) 100%);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+      margin-top: 0;
     }
 
-    /* ===== SECCIONES ===== */
-    .titulo-seccion {
-      text-align: left;
-      margin-bottom: 35px;
+    .page-header h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .filter-section {
+      background: var(--blanco);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .filter-section h3 {
+      font-size: 18px;
       font-weight: 600;
-      font-size: 32px;
+      margin-bottom: 15px;
       color: var(--gris-oscuro);
-      position: relative;
-      padding-bottom: 15px;
     }
 
-    .titulo-seccion::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 4px;
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      background: var(--gris-claro);
+      border: 2px solid transparent;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--gris-oscuro);
+    }
+
+    .filter-btn:hover {
       background: var(--acento);
+      color: white;
     }
 
-    /* ===== CARDS ===== */
+    .filter-btn.active {
+      background: var(--acento);
+      color: white;
+      border-color: var(--acento-hover);
+    }
+
     .card {
       border: none;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
       overflow: hidden;
+      height: 100%;
     }
 
     .card:hover {
@@ -283,6 +311,13 @@
       color: var(--gris-oscuro);
     }
 
+    .card-description {
+      font-size: 14px;
+      color: #6c757d;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
     .card-price {
       font-size: 22px;
       font-weight: 700;
@@ -299,6 +334,7 @@
       font-weight: 500;
       transition: all 0.3s ease;
       cursor: pointer;
+      width: 100%;
     }
 
     .btn-acento:hover {
@@ -311,48 +347,6 @@
       transform: translateY(0);
     }
 
-    /* Added "Nosotros" section styling */
-    #nosotros {
-      background: var(--blanco);
-    }
-
-    .nosotros-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .nosotros-content p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: var(--gris-oscuro);
-      margin-bottom: 20px;
-    }
-
-    /* ===== CONTACTO ===== */
-    .form-control:focus {
-      border-color: var(--acento);
-      box-shadow: 0 0 0 0.2rem rgba(139, 115, 85, 0.25);
-    }
-
-    .form-label {
-      font-weight: 500;
-      color: var(--gris-oscuro);
-      margin-bottom: 8px;
-    }
-
-    /* Added success message styling */
-    .alert-success-custom {
-      background: #d4edda;
-      border: 1px solid #c3e6cb;
-      color: #155724;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      display: none;
-    }
-
-    /* ===== FOOTER ===== */
     footer {
       background: var(--blanco);
       color: var(--gris-oscuro);
@@ -408,13 +402,12 @@
     .footer-bottom {
       text-align: center;
       margin-top: 40px;
-      padding-top: 20px;
+      padding: 30px 0;
       border-top: 1px solid #dee2e6;
       color: #6c757d;
       font-size: 14px;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .header-container {
         padding: 20px 20px 15px 20px;
@@ -447,12 +440,13 @@
         display: block;
       }
 
-      .carousel-item img {
-        height: 300px;
+      .page-header {
+        margin-top: 0;
+        padding: 60px 0 40px;
       }
 
-      .titulo-seccion {
-        font-size: 26px;
+      .page-header h2 {
+        font-size: 32px;
       }
 
       header.scrolled .header-container {
@@ -469,37 +463,16 @@
         font-size: 18px;
       }
     }
-
-    .quantity-btn {
-      background: var(--gris-claro);
-      border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .quantity-btn:hover {
-      background: var(--acento);
-      color: white;
-    }
   </style>
 </head>
 
 <body>
-  <!-- Added skip link for accessibility -->
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <header id="mainHeader">
     <div class="header-container">
       <div class="header-left">
-        <!-- Added mobile menu toggle -->
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú de navegación">
           <i class="bi bi-list"></i>
         </button>
@@ -511,7 +484,6 @@
       </div>
 
       <div class="header-right">
-        <!-- Updated cart button to link to carrito.html -->
         <a href="carrito.html" class="cart-button" id="cartButton" aria-label="Carrito de compras">
           <i class="bi bi-cart3"></i>
           <span class="cart-count" id="cartCount">0</span>
@@ -526,92 +498,265 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-            <!-- Updated navigation links to point to new pages -->
             <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
+  <!-- MAIN CONTENT -->
   <main id="main-content">
-    <!-- ===== SLIDER ===== -->
-    <section id="inicio">
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="imagenes/Gemini17.png" class="d-block w-100" alt="Mate Imperial de cerámica" loading="eager">
-          </div>
-          <div class="carousel-item">
-            <img src="imagenes/Gemini18.png" class="d-block w-100" alt="Bombilla de alpaca premium" loading="lazy">
-          </div>
-        </div>
-        <!-- Added carousel controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" aria-label="Imagen anterior">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" aria-label="Siguiente imagen">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h2>Nuestros Productos</h2>
+        <p>Descubrí nuestra selección de mates, bombillas y accesorios de calidad</p>
       </div>
     </section>
 
-    <!-- ===== DESTACADOS ===== -->
-    <section class="py-5 bg-light" id="productos">
+    <!-- PRODUCTS SECTION -->
+    <section class="py-5">
       <div class="container">
-        <h2 class="titulo-seccion">Productos Destacados</h2>
+        <!-- FILTER SECTION -->
+        <div class="filter-section">
+          <h3><i class="bi bi-funnel"></i> Filtrar por categoría</h3>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-category="todos">Todos</button>
+            <button class="filter-btn" data-category="mates">Mates</button>
+            <button class="filter-btn" data-category="bombillas">Bombillas</button>
+            <button class="filter-btn" data-category="accesorios">Accesorios</button>
+            <button class="filter-btn" data-category="sets">Sets</button>
+          </div>
+        </div>
 
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6 col-sm-6">
+        <!-- PRODUCTS GRID -->
+        <div class="row g-4" id="productsGrid">
+          <!-- Mates -->
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="mates">
             <article class="card text-center">
               <img src="imagenes/Gemini3.png" alt="Mate Imperial de cerámica" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">Mate Imperial</h3>
+                <p class="card-description">Mate de cerámica con diseño elegante y tradicional</p>
                 <p class="card-price">$28.000</p>
-                <button class="btn-acento btn comprar-btn" data-producto="Mate Imperial" data-precio="28000">
-                  <i class="bi bi-cart-plus"></i> Comprar
+                <button class="btn-acento comprar-btn" data-producto="Mate Imperial" data-precio="28000" data-imagen="imagenes/Gemini3.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
                 </button>
               </div>
             </article>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="mates">
+            <article class="card text-center">
+              <img src="imagenes/Gemini4.png" alt="Mate de calabaza tradicional" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Mate Calabaza</h3>
+                <p class="card-description">Mate tradicional de calabaza curada y lista para usar</p>
+                <p class="card-price">$18.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Mate Calabaza" data-precio="18000" data-imagen="imagenes/Gemini4.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="mates">
+            <article class="card text-center">
+              <img src="imagenes/Gemini1.png" alt="Mate camionero de madera" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Mate Camionero</h3>
+                <p class="card-description">Mate de madera resistente, ideal para viajes</p>
+                <p class="card-price">$22.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Mate Camionero" data-precio="22000" data-imagen="imagenes/Gemini1.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="mates">
+            <article class="card text-center">
+              <img src="imagenes/Gemini2.png" alt="Mate torpedo de acero" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Mate Torpedo</h3>
+                <p class="card-description">Mate de acero inoxidable con aislación térmica</p>
+                <p class="card-price">$35.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Mate Torpedo" data-precio="35000" data-imagen="imagenes/Gemini2.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Bombillas -->
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="bombillas">
             <article class="card text-center">
               <img src="imagenes/Gemini5.png" alt="Bombilla de alpaca con filtro" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">Bombilla Alpaca</h3>
+                <p class="card-description">Bombilla de alpaca premium con filtro desmontable</p>
                 <p class="card-price">$9.000</p>
-                <button class="btn-acento btn comprar-btn" data-producto="Bombilla Alpaca" data-precio="9000">
-                  <i class="bi bi-cart-plus"></i> Comprar
+                <button class="btn-acento comprar-btn" data-producto="Bombilla Alpaca" data-precio="9000" data-imagen="imagenes/Gemini5.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
                 </button>
               </div>
             </article>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="bombillas">
+            <article class="card text-center">
+              <img src="imagenes/Gemini6.png" alt="Bombilla de acero inoxidable" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Bombilla Acero</h3>
+                <p class="card-description">Bombilla de acero inoxidable resistente</p>
+                <p class="card-price">$6.500</p>
+                <button class="btn-acento comprar-btn" data-producto="Bombilla Acero" data-precio="6500" data-imagen="imagenes/Gemini6.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="bombillas">
+            <article class="card text-center">
+              <img src="imagenes/Gemini7.png" alt="Bombilla pico de loro" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Bombilla Pico Loro</h3>
+                <p class="card-description">Bombilla con pico de loro, diseño clásico</p>
+                <p class="card-price">$7.800</p>
+                <button class="btn-acento comprar-btn" data-producto="Bombilla Pico Loro" data-precio="7800" data-imagen="imagenes/Gemini7.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="bombillas">
+            <article class="card text-center">
+              <img src="imagenes/Gemini8.png" alt="Bombilla premium con baño de plata" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Bombilla Premium</h3>
+                <p class="card-description">Bombilla con baño de plata, edición especial</p>
+                <p class="card-price">$15.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Bombilla Premium" data-precio="15000" data-imagen="imagenes/Gemini8.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Accesorios -->
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="accesorios">
             <article class="card text-center">
               <img src="imagenes/Gemini9.png" alt="Matera de cuero artesanal" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">Matera Cuero</h3>
+                <p class="card-description">Matera artesanal de cuero genuino con bolsillos</p>
                 <p class="card-price">$32.000</p>
-                <button class="btn-acento btn comprar-btn" data-producto="Matera Cuero" data-precio="32000">
-                  <i class="bi bi-cart-plus"></i> Comprar
+                <button class="btn-acento comprar-btn" data-producto="Matera Cuero" data-precio="32000" data-imagen="imagenes/Gemini9.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
                 </button>
               </div>
             </article>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="accesorios">
+            <article class="card text-center">
+              <img src="imagenes/Gemini10.png" alt="Yerbera de madera" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Yerbera</h3>
+                <p class="card-description">Yerbera de madera con cierre hermético</p>
+                <p class="card-price">$12.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Yerbera" data-precio="12000" data-imagen="imagenes/Gemini10.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="accesorios">
+            <article class="card text-center">
+              <img src="imagenes/Gemini11.png" alt="Termo de acero inoxidable" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Termo 1L</h3>
+                <p class="card-description">Termo de acero inoxidable, mantiene calor 24hs</p>
+                <p class="card-price">$45.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Termo 1L" data-precio="45000" data-imagen="imagenes/Gemini11.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="accesorios">
+            <article class="card text-center">
+              <img src="imagenes/Gemini12.png" alt="Azucarera de cerámica" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Azucarera</h3>
+                <p class="card-description">Azucarera de cerámica con tapa y cuchara</p>
+                <p class="card-price">$8.500</p>
+                <button class="btn-acento comprar-btn" data-producto="Azucarera" data-precio="8500" data-imagen="imagenes/Gemini12.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Sets -->
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="sets">
             <article class="card text-center">
               <img src="imagenes/Gemini14.png" alt="Set inicial completo para mate" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">Set Inicial</h3>
+                <p class="card-description">Mate + bombilla + yerbera, ideal para comenzar</p>
                 <p class="card-price">$31.000</p>
-                <button class="btn-acento btn comprar-btn" data-producto="Set Inicial" data-precio="31000">
-                  <i class="bi bi-cart-plus"></i> Comprar
+                <button class="btn-acento comprar-btn" data-producto="Set Inicial" data-precio="31000" data-imagen="imagenes/Gemini14.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="sets">
+            <article class="card text-center">
+              <img src="imagenes/Gemini13.png" alt="Set premium completo" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Set Premium</h3>
+                <p class="card-description">Mate imperial + bombilla alpaca + matera cuero</p>
+                <p class="card-price">$65.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Set Premium" data-precio="65000" data-imagen="imagenes/Gemini13.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="sets">
+            <article class="card text-center">
+              <img src="imagenes/Gemini15.png" alt="Set viajero compacto" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Set Viajero</h3>
+                <p class="card-description">Mate torpedo + termo + matera, perfecto para viajes</p>
+                <p class="card-price">$78.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Set Viajero" data-precio="78000" data-imagen="imagenes/Gemini15.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-category="sets">
+            <article class="card text-center">
+              <img src="imagenes/Gemini16.png" alt="Set regalo especial" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Set Regalo</h3>
+                <p class="card-description">Caja de regalo con mate, bombilla y accesorios</p>
+                <p class="card-price">$55.000</p>
+                <button class="btn-acento comprar-btn" data-producto="Set Regalo" data-precio="55000" data-imagen="imagenes/Gemini16.png">
+                  <i class="bi bi-cart-plus"></i> Agregar al Carrito
                 </button>
               </div>
             </article>
@@ -619,56 +764,9 @@
         </div>
       </div>
     </section>
-
-    <!-- Added "Nosotros" section -->
-    <section class="py-5" id="nosotros">
-      <div class="container">
-        <h2 class="titulo-seccion">Sobre Nosotros</h2>
-        <div class="nosotros-content">
-          <p>
-            En <strong>Mates & Más</strong> somos apasionados por la tradición del mate. Desde 2015, nos dedicamos a ofrecer productos de la más alta calidad para que disfrutes de cada momento con tu mate.
-          </p>
-          <p>
-            Trabajamos con artesanos locales y seleccionamos cuidadosamente cada producto, desde mates de calabaza y cerámica hasta bombillas de alpaca y accesorios únicos.
-          </p>
-          <p>
-            Nuestra misión es mantener viva la tradición del mate, combinando la artesanía tradicional con diseños modernos que se adaptan a tu estilo de vida.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACTO ===== -->
-    <section class="container py-5" id="contacto">
-      <h2 class="titulo-seccion">Contacto</h2>
-      <!-- Added success message -->
-      <div class="alert-success-custom" id="successMessage" role="alert">
-        <i class="bi bi-check-circle"></i> ¡Mensaje enviado con éxito! Te responderemos pronto.
-      </div>
-      <form class="mx-auto" style="max-width:600px;" id="contactForm" novalidate>
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre completo</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" required minlength="3">
-          <div class="invalid-feedback">Por favor ingresa tu nombre (mínimo 3 caracteres).</div>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-          <div class="invalid-feedback">Por favor ingresa un email válido.</div>
-        </div>
-        <div class="mb-3">
-          <label for="mensaje" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required minlength="10"></textarea>
-          <div class="invalid-feedback">Por favor ingresa un mensaje (mínimo 10 caracteres).</div>
-        </div>
-        <button type="submit" class="btn-acento btn w-100">
-          <i class="bi bi-send"></i> Enviar Mensaje
-        </button>
-      </form>
-    </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer>
     <div class="container text-center text-md-start">
       <div class="row">
@@ -689,11 +787,10 @@
         <div class="col-md-4 mb-4">
           <h6>Navegación</h6>
           <ul>
-            <!-- Updated footer navigation links -->
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a class="nav-link" href="index.html">Inicio</a></li>
+            <li><a class="nav-link" href="productos.html">Productos</a></li>
+            <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li><a class="nav-link" href="index.html#contacto">Contacto</a></li>
           </ul>
         </div>
         <div class="col-md-4 mb-4">
@@ -711,9 +808,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
   <!-- Added quantity modal -->
   <div class="modal fade" id="quantityModal" tabindex="-1" aria-labelledby="quantityModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -742,8 +836,10 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    // ===== HEADER SCROLL ANIMATION =====
+    // Header scroll animation
     const header = document.getElementById("mainHeader");
     let scrolled = false;
     let ticking = false;
@@ -767,7 +863,7 @@
       }
     });
 
-    // ===== AUTO ADJUST BODY PADDING =====
+    // Auto adjust body padding
     function ajustarPaddingBody() {
       const header = document.querySelector("header");
       const alturaHeader = header.offsetHeight;
@@ -777,6 +873,7 @@
     window.addEventListener("load", ajustarPaddingBody);
     window.addEventListener("resize", ajustarPaddingBody);
 
+    // Mobile menu toggle
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
     const navbarCollapse = document.getElementById("navbarNav");
 
@@ -787,24 +884,13 @@
       icon.classList.toggle("bi-x");
     });
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll(".nav-link").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-          navbarCollapse.classList.remove("show");
-          const icon = mobileMenuToggle.querySelector("i");
-          icon.classList.add("bi-list");
-          icon.classList.remove("bi-x");
-        }
-      });
-    });
-
     let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
     const cartCountElement = document.getElementById("cartCount");
     cartCountElement.textContent = cartCount;
 
     let selectedProduct = null;
     let selectedPrice = 0;
+    let selectedImage = ''; // Added selectedImage variable to store product image URL
     let modalQuantity = 1;
 
     const quantityModal = new bootstrap.Modal(document.getElementById('quantityModal'));
@@ -839,7 +925,8 @@
         cart.push({
           nombre: selectedProduct,
           precio: selectedPrice,
-          cantidad: modalQuantity
+          cantidad: modalQuantity,
+          imagen: selectedImage
         });
       }
       
@@ -869,71 +956,40 @@
       modalQuantityDisplay.textContent = '1';
     });
 
+    // Add to cart functionality
     const comprarButtons = document.querySelectorAll(".comprar-btn");
 
     comprarButtons.forEach(button => {
       button.addEventListener("click", function() {
         selectedProduct = this.getAttribute("data-producto");
         selectedPrice = parseInt(this.getAttribute("data-precio"));
+        selectedImage = this.getAttribute("data-imagen");
         
         modalProductName.textContent = selectedProduct;
         quantityModal.show();
       });
     });
 
-    const contactForm = document.getElementById("contactForm");
-    const successMessage = document.getElementById("successMessage");
+    // Filter functionality
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productCards = document.querySelectorAll("#productsGrid > div");
 
-    contactForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-      
-      // Bootstrap validation
-      if (!contactForm.checkValidity()) {
-        event.stopPropagation();
-        contactForm.classList.add("was-validated");
-        return;
-      }
-
-      // Get form data
-      const formData = {
-        nombre: document.getElementById("nombre").value,
-        email: document.getElementById("email").value,
-        mensaje: document.getElementById("mensaje").value
-      };
-
-      console.log("[v0] Formulario enviado:", formData);
-
-      // Show success message
-      successMessage.style.display = "block";
-      contactForm.reset();
-      contactForm.classList.remove("was-validated");
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMessage.style.display = "none";
-      }, 5000);
-
-      // Scroll to success message
-      successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        const href = this.getAttribute("href");
-        if (href !== "#" && href.length > 1) {
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            const header = document.getElementById("mainHeader");
-            const headerHeight = header.offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = targetPosition - headerHeight - 20; // 20px extra padding
-            
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            });          }
-        }
+    filterButtons.forEach(button => {
+      button.addEventListener("click", function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        // Add active class to clicked button
+        this.classList.add("active");
+        
+        const category = this.getAttribute("data-category");
+        
+        productCards.forEach(card => {
+          if (category === "todos" || card.getAttribute("data-category") === category) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
       });
     });
   </script>
